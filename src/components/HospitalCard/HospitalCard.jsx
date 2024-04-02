@@ -1,8 +1,13 @@
 import icon from '../../assets/hospitalicon.png'
 import { Box, Button, Divider, Stack, Typography } from '@mui/material'
 import thumb from '../../assets/thumbsup.png'
+import Calendar from '../Calendar/Calendar'
+import { useState } from 'react'
 
-export default function HospitalCard({ details }) {
+export default function HospitalCard({ details, availableSlotes }) {
+
+    const [showCalendar, setShowCalendar] = useState(false)
+
     return (
         <Box sx={{ borderRadius: 2, bgcolor: '#fff', p: 4 }}>
             <Stack direction="row" spacing={4}>
@@ -60,12 +65,14 @@ export default function HospitalCard({ details }) {
                     <Typography textAlign='center' color='primary.green' fontSize={14} fontWeight={500} mb={1}>
                         Available Today
                     </Typography>
-                    <Button variant='contained' disableElevation>
+                    <Button variant='contained' disableElevation onClick={() => setShowCalendar(prev => !prev)}>
                         Book FREE Center Visit
                     </Button>
                 </Stack>
 
             </Stack>
+
+            {showCalendar && <Calendar availableSlotes={availableSlotes} />}
         </Box>
     )
 }
