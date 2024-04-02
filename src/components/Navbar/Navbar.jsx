@@ -1,7 +1,6 @@
-import { Box, Container, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Container, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import logo from '../../assets/logo.png'
-import Button from '../Button/Button'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -13,10 +12,10 @@ export default function Navbar() {
                 </Typography>
             </Box>
 
-            <Container maxWidth="xl" style={{width: "90%"}}>
-                <Stack direction="row" spacing={2} justifyContent="space-between" py={2}>
-                    <Link>
-                        <img src={logo} alt="Logo" height={27}/>
+            <Container maxWidth="xl">
+                <Stack direction="row" spacing={2} alignItems="center" justifyContent="space-between" py={2}>
+                    <Link to='/'>
+                        <img src={logo} alt="Logo" height={27} />
                     </Link>
 
                     <Stack direction="row" spacing={4} alignItems="center" className={styles.navlinks}>
@@ -26,7 +25,7 @@ export default function Navbar() {
                         <Link>Surgeries</Link>
                         <Link>Software for Provider</Link>
                         <Link>Facilities</Link>
-                        <Button>Login/Signup</Button>
+                        <Button variant="contained" disableElevation>My Bookings</Button>
                     </Stack>
 
                 </Stack>
