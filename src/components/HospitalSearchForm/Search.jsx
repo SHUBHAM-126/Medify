@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select, Button, InputAdornment } from "@mui/material";
+import { MenuItem, Select, Button, InputAdornment } from "@mui/material";
 import { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import styles from './Search.module.css'

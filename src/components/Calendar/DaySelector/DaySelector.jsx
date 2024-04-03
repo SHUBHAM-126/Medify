@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Box, Button, Divider, Stack, Typography } from '@mui/material';
 import styles from './DaySelector.module.css'
-import { format, add, isEqual, set } from 'date-fns'
+import { format, add, isEqual, startOfDay } from 'date-fns'
 import { SlideNextButton, SlidePrevButton } from './SliderButtons';
 
 export default function DaySelector({ selectedDate, setSelectedDate, totalSlots }) {
 
-    const date = set(new Date(), { hours: 0, minutes: 0, seconds: 0, milliseconds: 0 })
+    const date = startOfDay(new Date())
     const dateItems = []
 
     for (let i = 0; i < 7; i++) {
@@ -48,7 +48,7 @@ export default function DaySelector({ selectedDate, setSelectedDate, totalSlots 
                             sx={{ cursor: 'pointer' }}
                         >
                             <Typography
-                                fontWeight={isEqual(set(day, { hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }), selectedDate) ? 700 : 400}
+                                fontWeight={isEqual(day, selectedDate) ? 700 : 400}
                             >
                                 {customDateFormat(day)}
                             </Typography>
@@ -61,7 +61,7 @@ export default function DaySelector({ selectedDate, setSelectedDate, totalSlots 
                                 width='calc(100% - 50px)'
                                 position='relative'
                                 bottom='0'
-                                bgcolor={isEqual(set(day, { hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }), selectedDate) ? 'primary.main' : 'rgba(0,0,0,0)'}
+                                bgcolor={isEqual(day, selectedDate) ? 'primary.main' : 'rgba(0,0,0,0)'}
                                 left={0}
                                 zIndex={999}
                                 mt='5px'

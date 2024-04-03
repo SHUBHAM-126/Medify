@@ -5,8 +5,9 @@ import { useSearchParams } from "react-router-dom"
 import HospitalCard from "../../components/HospitalCard/HospitalCard"
 import icon from '../../assets/tick.png'
 import cta from '../../assets/cta.png'
-import HospitalSearch from "../../components/HospitalSearch/Search"
+import HospitalSearch from "../../components/HospitalSearchForm/Search"
 import BookingModal from "../../components/BookingModal/BookingModal"
+import AutohideSnackbar from "../../components/AutohideSnackbar/AutohideSnackbar"
 
 export default function Search() {
 
@@ -21,6 +22,7 @@ export default function Search() {
     }
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [bookingDetails, setBookingDetails] = useState({})
+    const [showBookingSuccess, setShowBookingSuccess] = useState(false)
 
     useEffect(() => {
 
@@ -57,7 +59,7 @@ export default function Search() {
         <Box sx={{ background: 'linear-gradient(#EFF5FE, rgba(241,247,255,0.47))', width: '100%', pl: 0 }}>
 
             <Box sx={{ position: 'relative', background: 'linear-gradient(90deg, #2AA7FF, #0C8CE5)', borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem' }}>
-                <Container maxWidth='xl' sx={{ background: '#fff', p: 3, borderRadius: 2, transform: 'translatey(50px)', mb: '50px' }} >
+                <Container maxWidth='xl' sx={{ background: '#fff', p: 3, borderRadius: 2, transform: 'translatey(50px)', mb: '50px', boxShadow:'0 0 10px rgba(0,0,0,0.1)' }} >
                     <HospitalSearch />
                 </Container>
                 {/* Pill */}
@@ -112,7 +114,9 @@ export default function Search() {
                 </Stack>
             </Container>
 
-            <BookingModal open={isModalOpen} setOpen={setIsModalOpen} bookingDetails={bookingDetails} />
+            <BookingModal open={isModalOpen} setOpen={setIsModalOpen} bookingDetails={bookingDetails} showSuccessMessage={setShowBookingSuccess} />
+
+            <AutohideSnackbar open={showBookingSuccess} setOpen={setShowBookingSuccess} message='Booking Successful' />
         </Box>
     )
 }

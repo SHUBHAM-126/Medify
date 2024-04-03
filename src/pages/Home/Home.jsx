@@ -1,6 +1,6 @@
 import { Container, Box } from "@mui/material";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
-import HospitalSearch from "../../components/HospitalSearch/Search"
+import HospitalSearch from "../../components/HospitalSearchForm/Search"
 
 export default function Home() {
     return (

@@ -1,10 +1,11 @@
 import icon from '../../assets/hospitalicon.png'
-import { Box, Button, Divider, Stack, Typography } from '@mui/material'
+import { Box, Button, Chip, Divider, Stack, Typography } from '@mui/material'
 import thumb from '../../assets/thumbsup.png'
 import Calendar from '../Calendar/Calendar'
 import { useState } from 'react'
+import { format } from 'date-fns'
 
-export default function HospitalCard({ details, availableSlotes, handleBooking }) {
+export default function HospitalCard({ details, availableSlotes, handleBooking, booking = false }) {
 
     const [showCalendar, setShowCalendar] = useState(false)
 
@@ -61,13 +62,40 @@ export default function HospitalCard({ details, availableSlotes, handleBooking }
                     </Stack>
                 </Box>
 
-                <Stack justifyContent='flex-end'>
-                    <Typography textAlign='center' color='primary.green' fontSize={14} fontWeight={500} mb={1}>
-                        Available Today
-                    </Typography>
-                    <Button variant='contained' disableElevation onClick={() => setShowCalendar(prev => !prev)}>
-                        Book FREE Center Visit
-                    </Button>
+                <Stack justifyContent={booking ? 'flex-start' : 'flex-end'} minWidth='23%'>
+                    {!booking && (
+                        <>
+                            <Typography textAlign='center' color='primary.green' fontSize={14} fontWeight={500} mb={1}>
+                                Available Today
+                            </Typography>
+                            <Button variant='contained' disableElevation onClick={() => setShowCalendar(prev => !prev)}>
+                                {!showCalendar ? 'Book FREE Center Visit' : 'Hide Booking Calendar'}
+                            </Button>
+                        </>
+                    )}
+
+                    {booking && (
+                        <Stack direction='row' spacing={1}>
+                            <Chip
+                                label={details.bookingTime}
+                                variant='outlined'
+                                color='primary'
+                                sx={{
+                                    borderRadius: 1,
+                                    fontSize: 14
+                                }}
+                            />
+                            <Chip
+                                label={format(new Date(details.bookingDate), 'dd MMMM yyyy')}
+                                variant='outlined'
+                                color='success'
+                                sx={{
+                                    borderRadius: 1,
+                                    fontSize: 14
+                                }}
+                            />
+                        </Stack>
+                    )}
                 </Stack>
 
             </Stack>

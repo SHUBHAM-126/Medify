@@ -61,8 +61,8 @@ export default function TimeSlotPicker({ availableSlotes, details, handleBooking
                     alignItems='center'
                     px={6}
                 >
-                    <Typography width='15%'>Afternoon</Typography>
-                    {availableSlotes.afternoon.map(slot => (
+                    <Typography width='15%'>Evening</Typography>
+                    {availableSlotes.evening.map(slot => (
                         <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
                 </Stack>

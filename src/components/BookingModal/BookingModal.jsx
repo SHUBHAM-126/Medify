@@ -1,16 +1,34 @@
 import { Modal, Typography, Box, TextField, Button, Stack } from "@mui/material";
 import { useState } from "react";
+import { format } from 'date-fns'
 
-export default function BookingModal({ setOpen, open, bookingDetails }) {
+export default function BookingModal({ setOpen, open, bookingDetails, showSuccessMessage }) {
 
     const [email, setEmail] = useState('')
 
     const handleBooking = (e) => {
         e.preventDefault()
-        console.log(bookingDetails)
-        console.log(email)
+
+        const bookings = localStorage.getItem('bookings') || '[]'
+
+        const oldBookings = JSON.parse(bookings)
+
+        localStorage.setItem('bookings', JSON.stringify([...oldBookings, { ...bookingDetails, bookingEmail: email }]))
+        showSuccessMessage(true)
         setEmail('')
         setOpen(false)
+    }
+
+    const formatDate = (day) => {
+
+        if (day) {
+            const date = new Date(day)
+            return format(date, 'E, d LLL')
+        }
+        else {
+            return null
+        }
+
     }
 
     return (
@@ -21,7 +39,7 @@ export default function BookingModal({ setOpen, open, bookingDetails }) {
             <Box
                 sx={{
                     width: 1,
-                    maxWidth: 500,
+                    maxWidth: 600,
                     position: 'absolute',
                     top: '50%',
                     left: '50%',
@@ -40,7 +58,13 @@ export default function BookingModal({ setOpen, open, bookingDetails }) {
                     Confirm booking
                 </Typography>
                 <Typography fontSize={14} mb={3}>
-                    Please enter your email to confirm booking
+                    <Box component='span'>Please enter your email to confirm booking for </Box>
+                    <Box
+                        component='span'
+                        fontWeight={600}
+                    >
+                        {`${bookingDetails.bookingTime} on ${formatDate(bookingDetails.bookingDate)}`}
+                    </Box>
                 </Typography>
                 <form onSubmit={handleBooking}>
                     <Stack alignItems='flex-start' spacing={2}>
@@ -60,6 +84,7 @@ export default function BookingModal({ setOpen, open, bookingDetails }) {
                     </Stack>
                 </form>
             </Box>
+
         </Modal>
     )
 }
