@@ -59,21 +59,9 @@ export default function Search() {
         <Box sx={{ background: 'linear-gradient(#EFF5FE, rgba(241,247,255,0.47))', width: '100%', pl: 0 }}>
 
             <Box sx={{ position: 'relative', background: 'linear-gradient(90deg, #2AA7FF, #0C8CE5)', borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem' }}>
-                <Container maxWidth='xl' sx={{ background: '#fff', p: 3, borderRadius: 2, transform: 'translatey(50px)', mb: '50px', boxShadow:'0 0 10px rgba(0,0,0,0.1)' }} >
+                <Container maxWidth='xl' sx={{ background: '#fff', p: 3, borderRadius: 2, transform: 'translatey(50px)', mb: '50px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }} >
                     <HospitalSearch />
                 </Container>
-                {/* Pill */}
-                <Box
-                    position='absolute'
-                    bgcolor='rgba(255,255,255,0.4)'
-                    height={28}
-                    width={62}
-                    left={0}
-                    bottom={0}
-                    borderRadius={6}
-                    sx={{ rotate: '335deg', translate: '-20px 5px' }}
-                >
-                </Box>
             </Box>
 
 
@@ -94,6 +82,8 @@ export default function Search() {
                     </Box>
                 )}
 
+
+
                 <Stack alignItems='flex-start' direction={{ md: 'row' }}>
 
                     <Stack spacing={3} width='calc(100% - 384px)' mr='24px'>
@@ -106,6 +96,12 @@ export default function Search() {
                                 handleBooking={handleBookingModal}
                             />
                         ))}
+
+                        {/* {hospitals.length == 0 && (
+                            <Typography variant="h3" bgcolor='#fff' p={3} borderRadius={2}>
+                                No Hospitals Found!
+                            </Typography>
+                        )} */}
 
                     </Stack>
 
