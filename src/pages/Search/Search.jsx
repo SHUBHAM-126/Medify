@@ -6,6 +6,7 @@ import HospitalCard from "../../components/HospitalCard/HospitalCard"
 import icon from '../../assets/tick.png'
 import cta from '../../assets/cta.png'
 import HospitalSearch from "../../components/HospitalSearch/Search"
+import BookingModal from "../../components/BookingModal/BookingModal"
 
 export default function Search() {
 
@@ -18,6 +19,8 @@ export default function Search() {
         afternoon: ['12:00 PM', '12:30 PM', '01:30 PM', '02:00 PM', '02:30 PM'],
         evening: ['06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM']
     }
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [bookingDetails, setBookingDetails] = useState({})
 
     useEffect(() => {
 
@@ -43,6 +46,12 @@ export default function Search() {
         setCity(seachParams.get('city'))
 
     }, [seachParams])
+
+    // const show booking modal 
+    const handleBookingModal = (details) => {
+        setBookingDetails(details)
+        setIsModalOpen(true)
+    }
 
     return (
         <Box sx={{ background: 'linear-gradient(#EFF5FE, rgba(241,247,255,0.47))', width: '100%', pl: 0 }}>
@@ -88,7 +97,12 @@ export default function Search() {
                     <Stack spacing={3} width='calc(100% - 384px)' mr='24px'>
 
                         {hospitals.length > 0 && hospitals.map(hospital => (
-                            <HospitalCard key={hospital['Hospital Name']} details={hospital} availableSlotes={availableSlotes} />
+                            <HospitalCard
+                                key={hospital['Hospital Name']}
+                                details={hospital}
+                                availableSlotes={availableSlotes}
+                                handleBooking={handleBookingModal}
+                            />
                         ))}
 
                     </Stack>
@@ -97,6 +111,8 @@ export default function Search() {
 
                 </Stack>
             </Container>
+
+            <BookingModal open={isModalOpen} setOpen={setIsModalOpen} bookingDetails={bookingDetails} />
         </Box>
     )
 }

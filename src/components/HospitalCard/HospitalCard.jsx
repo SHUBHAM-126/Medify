@@ -4,7 +4,7 @@ import thumb from '../../assets/thumbsup.png'
 import Calendar from '../Calendar/Calendar'
 import { useState } from 'react'
 
-export default function HospitalCard({ details, availableSlotes }) {
+export default function HospitalCard({ details, availableSlotes, handleBooking }) {
 
     const [showCalendar, setShowCalendar] = useState(false)
 
@@ -72,7 +72,13 @@ export default function HospitalCard({ details, availableSlotes }) {
 
             </Stack>
 
-            {showCalendar && <Calendar availableSlotes={availableSlotes} />}
+            {showCalendar && (
+                <Calendar
+                    details={details}
+                    availableSlotes={availableSlotes}
+                    handleBooking={handleBooking}
+                />
+            )}
         </Box>
     )
 }

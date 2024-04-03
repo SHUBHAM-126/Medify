@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Chip, Stack, Typography, Divider } from "@mui/material";
 
-export default function TimeSlotPicker({ availableSlotes }) {
+export default function TimeSlotPicker({ availableSlotes, details, handleBooking, selectedDate }) {
 
 
     const CustomChip = (props) => (
@@ -19,6 +19,10 @@ export default function TimeSlotPicker({ availableSlotes }) {
         />
     )
 
+    const handleClick = (slot) => {
+        handleBooking({ ...details, bookingDate: selectedDate, bookingTime: slot })
+    }
+
 
     return (
         <Stack pt={3} spacing={3}
@@ -33,7 +37,7 @@ export default function TimeSlotPicker({ availableSlotes }) {
                 >
                     <Typography width='15%'>Morning</Typography>
                     {availableSlotes.morning.map(slot => (
-                        <CustomChip key={slot} label={slot} handleClick={() => console.log(slot)} />
+                        <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
                 </Stack>
             )}
@@ -46,7 +50,7 @@ export default function TimeSlotPicker({ availableSlotes }) {
                 >
                     <Typography width='15%'>Afternoon</Typography>
                     {availableSlotes.afternoon.map(slot => (
-                        <CustomChip key={slot} label={slot} handleClick={() => console.log(slot)} />
+                        <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
                 </Stack>
             )}
@@ -59,7 +63,7 @@ export default function TimeSlotPicker({ availableSlotes }) {
                 >
                     <Typography width='15%'>Afternoon</Typography>
                     {availableSlotes.afternoon.map(slot => (
-                        <CustomChip key={slot} label={slot} handleClick={() => console.log(slot)} />
+                        <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
                 </Stack>
             )}

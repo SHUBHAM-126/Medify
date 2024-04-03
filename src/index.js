@@ -37,10 +37,12 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
+        root: {
+          borderRadius: '8px',
+          textTransform: 'none',
+        },
         contained: {
           color: "#fff",
-          textTransform: 'none',
-          borderRadius: '8px'
         }
       }
     },
