@@ -1,7 +1,6 @@
-import { MenuItem, Select, Button, InputAdornment } from "@mui/material";
+import { MenuItem, Select, Button, InputAdornment, Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
-import styles from './Search.module.css'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -68,7 +67,17 @@ export default function Search() {
     }, [formData.state])
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <Box
+            component='form'
+            onSubmit={handleSubmit}
+            sx={{
+                display: 'flex',
+                gap: 4,
+                justifyContent: 'space-between',
+                flexDirection: { xs: 'column', md: 'row' },
+                
+            }}
+        >
 
             <Select
                 displayEmpty
@@ -78,7 +87,7 @@ export default function Search() {
                 onChange={handleChange}
                 startAdornment={<InputAdornment position="start"><SearchIcon /></InputAdornment>}
                 required
-                sx={{ minWidth: 300, width: '100%' }}
+                sx={{ minWidth: 200, width: '100%' }}
             >
                 <MenuItem disabled value="" selected>State</MenuItem>
                 {states.length > 0 && states.map(state => (
@@ -94,7 +103,7 @@ export default function Search() {
                 onChange={handleChange}
                 startAdornment={<InputAdornment position="start"><SearchIcon /></InputAdornment>}
                 required
-                sx={{ minWidth: 300, width: '100%' }}
+                sx={{ minWidth: 200, width: '100%' }}
             >
                 <MenuItem disabled value="" selected>City</MenuItem>
                 {cities.length > 0 && cities.map(city => (
@@ -112,6 +121,6 @@ export default function Search() {
             >
                 Search
             </Button>
-        </form>
+        </Box >
     )
 }

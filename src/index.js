@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   }
 ])
 
-const theme = createTheme({
+export const theme = createTheme({
   typography: {
     fontFamily: "Poppins , sans-serif",
   },
