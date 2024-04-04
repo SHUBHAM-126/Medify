@@ -47,7 +47,7 @@ export default function CustomizedAccordions({ data }) {
     return (
         <div>
             {data.map((item, index) => (
-                <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+                <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
                     <AccordionSummary aria-controls={`panel${index}d-content`} id={`panel${index}d-header`}>
                         <Typography
                             fontSize={18}
