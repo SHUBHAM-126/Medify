@@ -70,6 +70,7 @@ const theme = createTheme({
           color: "#1B3C74",
           fontWeight: '600',
           fontSize: '48px',
+          lineHeight: 1.2
         },
         h3: {
           color: '#102851',

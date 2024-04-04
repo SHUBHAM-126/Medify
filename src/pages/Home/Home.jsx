@@ -5,6 +5,9 @@ import HeroUSPs from "../../components/Sections/HeroUSPs/HeroUSPs";
 import FAQs from "../../components/Sections/FAQs/FAQs";
 import OurFamilies from "../../components/Sections/OurFamilies/OurFamilies";
 import Blogs from "../../components/Sections/Blogs/Blogs";
+import PatientCaring from "../../components/Sections/PatientCaring/PatientCaring";
+import Specialists from "../../components/Sections/Specialists/Specialists";
+import Specialization from "../../components/Sections/Specialization/Specialization";
 
 export default function Home() {
     return (
@@ -28,6 +31,12 @@ export default function Home() {
                     </Stack>
                 </Container>
             </Box>
+
+            <Specialization />
+
+            <Specialists />
+
+            <PatientCaring />
 
             <Blogs />
 

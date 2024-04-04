@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-export default function IconCard({ img, title, bgColor, active = false }) {
+export default function IconCard({ img, title, bgColor, active = false, shadow = false }) {
     return (
         <Stack
             spacing={2}
@@ -9,6 +9,7 @@ export default function IconCard({ img, title, bgColor, active = false }) {
             p={3}
             borderRadius={2}
             border={active ? '1px solid #2AA7FF' : '0'}
+            boxShadow={shadow ? '0 0 24px rgba(0,0,0,0.09)' : 'none'}
         >
             <Box
                 component='img'
