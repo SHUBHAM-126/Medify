@@ -31,7 +31,7 @@ export default function Specialization() {
                 <Grid container spacing={3} mb={5}>
 
                     {data.map(item => (
-                        <Grid item xs={4} md={3}>
+                        <Grid item xs={4} md={3} key={item.title}>
                             <IconCard img={item.icon} title={item.title} bgColor={'#FFFFFF'} shadow={true} />
                         </Grid>
                     ))}

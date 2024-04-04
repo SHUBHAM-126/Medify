@@ -8,12 +8,13 @@ import Blogs from "../../components/Sections/Blogs/Blogs";
 import PatientCaring from "../../components/Sections/PatientCaring/PatientCaring";
 import Specialists from "../../components/Sections/Specialists/Specialists";
 import Specialization from "../../components/Sections/Specialization/Specialization";
+import Offers from "../../components/Sections/Offers/Offers";
 
 export default function Home() {
     return (
         <Box>
 
-            <Box sx={{ background: 'linear-gradient(#E7F0FF , rgba(232, 241, 255, 0.47) 90%, #fff 10%)', }} mb={12}>
+            <Box sx={{ background: 'linear-gradient(#E7F0FF , rgba(232, 241, 255, 0.47) 90%, #fff 10%)', }} mb={4}>
                 <Container maxWidth='xl'>
                     <HeroSlider />
                     <Stack
@@ -31,6 +32,8 @@ export default function Home() {
                     </Stack>
                 </Container>
             </Box>
+
+            <Offers/>
 
             <Specialization />
 
