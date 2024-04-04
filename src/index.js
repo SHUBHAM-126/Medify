@@ -68,8 +68,8 @@ const theme = createTheme({
         },
         h2: {
           color: "#1B3C74",
+          fontWeight: '600',
           fontSize: '48px',
-          fontWeight: '600'
         },
         h3: {
           color: '#102851',
@@ -113,6 +113,12 @@ const theme = createTheme({
     }
   }
 })
+
+theme.typography.h2 = {
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '32px'
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

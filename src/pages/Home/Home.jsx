@@ -3,6 +3,7 @@ import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import HospitalSearch from "../../components/HospitalSearchForm/Search"
 import HeroUSPs from "../../components/Sections/HeroUSPs/HeroUSPs";
 import FAQs from "../../components/Sections/FAQs/FAQs";
+import OurFamilies from "../../components/Sections/OurFamilies/OurFamilies";
 
 export default function Home() {
     return (
@@ -26,6 +27,8 @@ export default function Home() {
                     </Stack>
                 </Container>
             </Box>
+
+            <OurFamilies/>
 
             <FAQs />
 
