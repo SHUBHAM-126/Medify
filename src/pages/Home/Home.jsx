@@ -1,7 +1,8 @@
 import { Container, Box, Stack } from "@mui/material";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import HospitalSearch from "../../components/HospitalSearchForm/Search"
-import HeroUSPs from "../../components/Layouts/HeroUSPs";
+import HeroUSPs from "../../components/Sections/HeroUSPs/HeroUSPs";
+import FAQs from "../../components/Sections/FAQs/FAQs";
 
 export default function Home() {
     return (
@@ -26,9 +27,7 @@ export default function Home() {
                 </Container>
             </Box>
 
-            <Box>
-                
-            </Box>
+            <FAQs />
 
         </Box>
     )

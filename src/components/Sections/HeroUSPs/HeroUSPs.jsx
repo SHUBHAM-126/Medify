@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-import icon1 from '../../assets/Doctor.png'
-import icon2 from '../../assets/Drugstore.png'
-import icon3 from '../../assets/Hospital.png'
-import icon4 from '../../assets/Capsule.png'
-import icon5 from '../../assets/Ambulance.png'
-import IconCard from '../IconCard/IconCard'
+import icon1 from '../../../assets/Doctor.png'
+import icon2 from '../../../assets/Drugstore.png'
+import icon3 from '../../../assets/Hospital.png'
+import icon4 from '../../../assets/Capsule.png'
+import icon5 from '../../../assets/Ambulance.png'
+import IconCard from '../../IconCard/IconCard'
 
 export default function HeroUSPs() {
 

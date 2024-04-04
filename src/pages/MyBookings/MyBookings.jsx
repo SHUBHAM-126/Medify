@@ -36,7 +36,7 @@ export default function MyBookings() {
                 </Container>
             </Box>
 
-            <Container maxWidth='xl' sx={{ pt: 8, pb: 3 }}>
+            <Container maxWidth='xl' sx={{ pt: 8, pb: 10 }}>
 
                 <Stack alignItems='flex-start' direction={{ md: 'row' }}>
 

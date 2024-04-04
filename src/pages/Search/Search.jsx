@@ -65,7 +65,7 @@ export default function Search() {
             </Box>
 
 
-            <Container maxWidth='xl' sx={{ pt: 8, pb: 3 }}>
+            <Container maxWidth='xl' sx={{ pt: 8, pb: 10 }}>
 
                 {hospitals.length > 0 && (
                     <Box sx={{ mb: 3 }}>
@@ -96,12 +96,6 @@ export default function Search() {
                                 handleBooking={handleBookingModal}
                             />
                         ))}
-
-                        {/* {hospitals.length == 0 && (
-                            <Typography variant="h3" bgcolor='#fff' p={3} borderRadius={2}>
-                                No Hospitals Found!
-                            </Typography>
-                        )} */}
 
                     </Stack>
 
