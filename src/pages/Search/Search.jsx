@@ -111,6 +111,13 @@ export default function Search() {
                                 </Typography>
                             )}
 
+                            {!state && (
+                                <Typography variant="h3" bgcolor='#fff' p={3} borderRadius={2}>
+                                    Please select a state and city
+                                </Typography>
+                            )}
+
+
                         </Stack>
 
                         <img src={cta} width={360} height='auto' />

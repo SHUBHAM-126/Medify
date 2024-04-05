@@ -20,7 +20,7 @@ export default function Home() {
                     <HeroSlider />
                     <Stack
                         p={{ xs: 2.5, md: 8 }}
-                        mt={{ xs: -2, md: -10 }}
+                        mt={{ xs: -2, md: 0, lg: -6, xl:-10 }}
                         position='relative'
                         zIndex={99}
                         bgcolor="#fff"
