@@ -72,10 +72,10 @@ export default function Search() {
             onSubmit={handleSubmit}
             sx={{
                 display: 'flex',
-                gap: 4,
+                gap: { xs: 2, md: 4 },
                 justifyContent: 'space-between',
                 flexDirection: { xs: 'column', md: 'row' },
-                
+
             }}
         >
 

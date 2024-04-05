@@ -53,6 +53,7 @@ export default function CustomizedAccordions({ data }) {
                             fontSize={18}
                             fontWeight={700}
                             color='#1B3C74'
+                            lineHeight={1.2}
                         >
                             {item.question}
                         </Typography>

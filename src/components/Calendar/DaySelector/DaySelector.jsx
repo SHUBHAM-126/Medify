@@ -35,10 +35,16 @@ export default function DaySelector({ selectedDate, setSelectedDate, totalSlots 
         <Stack pt={3} position='relative'>
             <Divider sx={{ mb: 3 }} />
             <Swiper
-                slidesPerView={3}
+                slidesPerView={4}
                 loop={false}
-                spaceBetween={30}
+                spaceBetween={11}
                 className={styles.swiperStyles}
+                breakpoints={{
+                    767: {
+                        spaceBetween: 30,
+                        slidesPerView: 3
+                    }
+                }}
             >
                 {dateItems.map((day, index) => (
                     <SwiperSlide key={index} className={styles.swiperslide}>
@@ -49,16 +55,17 @@ export default function DaySelector({ selectedDate, setSelectedDate, totalSlots 
                         >
                             <Typography
                                 fontWeight={isEqual(day, selectedDate) ? 700 : 400}
+                                fontSize={{ xs: 11, md: 16 }}
                             >
                                 {customDateFormat(day)}
                             </Typography>
-                            <Typography fontSize={12} color='primary.green'>
+                            <Typography fontSize={{ xs: 8, md: 12 }} color='primary.green'>
                                 {`${totalSlots} Slots Available`}
                             </Typography>
 
                             <Box
-                                height='5px'
-                                width='calc(100% - 50px)'
+                                height={{ xs: '4px', md: '5px' }}
+                                width={{ xs: 1, md: 'calc(100% - 50px)' }}
                                 position='relative'
                                 bottom='0'
                                 bgcolor={isEqual(day, selectedDate) ? 'primary.main' : 'rgba(0,0,0,0)'}
@@ -73,17 +80,22 @@ export default function DaySelector({ selectedDate, setSelectedDate, totalSlots 
                     </SwiperSlide>
                 ))}
 
-                <span slot="container-start"><SlidePrevButton /></span>
+                <span slot="container-start">
+                    <Box display={{ xs: 'none', md: 'block' }}>
+                        <SlidePrevButton />
+                    </Box>
+                </span>
 
                 <span slot="container-end">
-
-                    <SlideNextButton />
+                    <Box display={{ xs: 'none', md: 'block' }}>
+                        <SlideNextButton />
+                    </Box>
                 </span>
             </Swiper>
 
             <Box
-                height='5px'
-                width='calc(100% - 150px)'
+                height={{ xs: '4px', md: '5px' }}
+                width={{ xs: 1, md: 'calc(100% - 150px)' }}
                 bgcolor='#F0F0F5'
                 mt='5px'
                 position='absolute'

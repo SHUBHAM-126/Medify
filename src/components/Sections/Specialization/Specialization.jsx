@@ -28,7 +28,7 @@ export default function Specialization() {
                     Find by specialisation
                 </Typography>
 
-                <Grid container spacing={3} mb={5}>
+                <Grid container spacing={{ xs: 1, md: 3 }} mb={5} justifyContent={'center'}>
 
                     {data.map(item => (
                         <Grid item xs={4} md={3} key={item.title}>

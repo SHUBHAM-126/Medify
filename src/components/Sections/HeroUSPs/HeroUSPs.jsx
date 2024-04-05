@@ -30,9 +30,9 @@ export default function HeroUSPs() {
             >
                 You may be looking for
             </Typography>
-            <Grid container columnSpacing={2} >
+            <Grid container columnSpacing={{ xs: 1, md: 2 }} justifyContent={'center'}>
                 {USPs.map(usp => (
-                    <Grid item key={usp.title} xs={2.4}>
+                    <Grid item key={usp.title} xs={4} md={2.4}>
 
                         <IconCard img={usp.img} title={usp.title} active={usp.active || false} bgColor='#FAFBFE' />
 

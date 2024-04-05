@@ -121,6 +121,18 @@ theme.typography.h2 = {
   }
 }
 
+theme.typography.h1 = {
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '36px'
+  }
+}
+
+theme.typography.h3 = {
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '22px'
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

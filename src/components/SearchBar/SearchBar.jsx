@@ -22,7 +22,7 @@ export default function SearchBar({ list, filterList }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <Stack direction='row' spacing={2}>
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
                 <TextField
                     type="text"
                     label="Search By Hospital"

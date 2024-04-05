@@ -10,15 +10,15 @@ export default function HospitalCard({ details, availableSlotes, handleBooking, 
     const [showCalendar, setShowCalendar] = useState(false)
 
     return (
-        <Box sx={{ borderRadius: 2, bgcolor: '#fff', p: 4 }}>
-            <Stack direction="row" spacing={4}>
-                <Box component='img' src={icon} width={130} height='auto' sx={{ flexShrink: 0, alignSelf: 'start' }} />
+        <Box sx={{ borderRadius: 2, bgcolor: '#fff', p: { xs: 2, md: 4 } }}>
+            <Stack direction={{ xs: 'column', md: "row" }} spacing={{ xs: 1, md: 4 }} flexWrap={'wrap'}>
+                <Box component='img' src={icon} width={{ xs: 64, md: 130 }} height='auto' sx={{ flexShrink: 0, alignSelf: 'start' }} />
                 <Box flex={1}>
                     <Typography
                         component='h3'
                         color='primary.main'
                         fontWeight={600}
-                        fontSize={20}
+                        fontSize={{ xs: 18, md: 20 }}
                         mb={1}
                         textTransform='capitalize'
                         lineHeight={1}
@@ -55,8 +55,13 @@ export default function HospitalCard({ details, availableSlotes, handleBooking, 
                         width='fit-content'
                         spacing='4px'
                     >
-                        <img src={thumb} width={20} height={20} />
-                        <Typography fontWeight={700} color="#fff" sx={{ opacity: 0.5 }}>
+                        <Box
+                            component={'img'}
+                            src={thumb}
+                            width={{ xs: 16, md: 20 }}
+                            height={{ xs: 16, md: 20 }}
+                        />
+                        <Typography fontWeight={700} fontSize={{ xs: 14, md: 16 }} color="#fff" sx={{ opacity: 0.5 }}>
                             {details['Hospital overall rating'] == 'Not Available' ? 0 : details['Hospital overall rating']}
                         </Typography>
                     </Stack>
@@ -75,7 +80,7 @@ export default function HospitalCard({ details, availableSlotes, handleBooking, 
                     )}
 
                     {booking && (
-                        <Stack direction='row' spacing={1}>
+                        <Stack direction='row' spacing={1} mt={{ xs: 2, md: 0 }}>
                             <Chip
                                 label={details.bookingTime}
                                 variant='outlined'

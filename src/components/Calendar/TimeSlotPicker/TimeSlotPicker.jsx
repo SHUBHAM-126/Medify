@@ -11,11 +11,16 @@ export default function TimeSlotPicker({ availableSlotes, details, handleBooking
             variant="outlined"
             sx={{
                 borderRadius: '5px',
-                fontSize: 14,
+                fontSize: { xs: 10, md: 14 },
                 cursor: 'pointer',
-
+                '&:nth-of-type(1)': {
+                    ml: 0
+                },
+                mr: { xs: 1, md: 3 },
+                mt: { xs: 1, md: 0 },
             }}
             onClick={props.handleClick}
+
         />
     )
 
@@ -25,17 +30,17 @@ export default function TimeSlotPicker({ availableSlotes, details, handleBooking
 
 
     return (
-        <Stack pt={3} spacing={3}
+        <Stack pt={3} spacing={{ xs: 2, md: 3 }}
             divider={<Divider orientation="horizontal" flexItem />}
         >
             {availableSlotes.morning.length > 0 && (
                 <Stack
                     direction='row'
-                    spacing={3}
                     alignItems='center'
-                    px={6}
+                    px={{ xs: 0, md: 6 }}
+                    flexWrap={'wrap'}
                 >
-                    <Typography width='15%'>Morning</Typography>
+                    <Typography width={{ xs: 1, md: '15%' }} fontSize={{ xs: 14, md: 16 }}>Morning</Typography>
                     {availableSlotes.morning.map(slot => (
                         <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
@@ -44,11 +49,11 @@ export default function TimeSlotPicker({ availableSlotes, details, handleBooking
             {availableSlotes.afternoon.length > 0 && (
                 <Stack
                     direction='row'
-                    spacing={3}
                     alignItems='center'
-                    px={6}
+                    px={{ xs: 0, md: 6 }}
+                    flexWrap={'wrap'}
                 >
-                    <Typography width='15%'>Afternoon</Typography>
+                    <Typography width={{ xs: 1, md: '15%' }} fontSize={{ xs: 14, md: 16 }}>Afternoon</Typography>
                     {availableSlotes.afternoon.map(slot => (
                         <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}
@@ -57,11 +62,11 @@ export default function TimeSlotPicker({ availableSlotes, details, handleBooking
             {availableSlotes.afternoon.length > 0 && (
                 <Stack
                     direction='row'
-                    spacing={3}
                     alignItems='center'
-                    px={6}
+                    px={{ xs: 0, md: 6 }}
+                    flexWrap={'wrap'}
                 >
-                    <Typography width='15%'>Evening</Typography>
+                    <Typography width={{ xs: 1, md: '15%' }} fontSize={{ xs: 14, md: 16 }}>Evening</Typography>
                     {availableSlotes.evening.map(slot => (
                         <CustomChip key={slot} label={slot} handleClick={() => handleClick(slot)} />
                     ))}

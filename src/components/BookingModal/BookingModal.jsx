@@ -38,14 +38,14 @@ export default function BookingModal({ setOpen, open, bookingDetails, showSucces
         >
             <Box
                 sx={{
-                    width: 1,
+                    width: '95%',
                     maxWidth: 600,
                     position: 'absolute',
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     boxShadow: 24,
-                    p: 4,
+                    p: { xs: 3, md: 4 },
                     outline: 0,
                     bgcolor: '#fff',
                     borderRadius: 2

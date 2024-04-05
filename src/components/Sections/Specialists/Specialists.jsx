@@ -25,8 +25,8 @@ export default function Specialists() {
     ]
 
     return (
-        <Box py={4} >
-            <Typography variant="h2" textAlign='center' mb={3}>
+        <Box py={4} id="find-doctors">
+            <Typography variant="h2" textAlign='center' mb={3} px={2}>
                 Our Medical Specialist
             </Typography>
             <Swiper

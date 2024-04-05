@@ -22,7 +22,7 @@ export default function DownloadApp() {
                     </Grid>
 
                     <Grid item xs={12} md={6.5} >
-                        <Box position='relative' pl='50px'>
+                        <Box position='relative' pl={{ xs: '36px', md: '50px' }} mb={{ xs: 4, md: 0 }}>
                             <Typography variant='h2' mb={2}>
                                 Download the<br />
                                 <Box component='span' color='primary.main'>Medify </Box>
@@ -32,7 +32,7 @@ export default function DownloadApp() {
                             <Box
                                 src={arrow}
                                 component='img'
-                                width={40}
+                                width={{ xs: 24, md: 40 }}
                                 position='absolute'
                                 left={0}
                                 top={50}
@@ -40,10 +40,10 @@ export default function DownloadApp() {
 
                             <SmsForm />
 
-                            <Stack direction='row' spacing={2} >
+                            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 1, md: 2 }} >
                                 <Button
                                     sx={{ bgcolor: '#333', color: '#fff', py: 1.5, borderRadius: 1.5 }}
-                                    size='large'
+                                    size={'large'}
                                     startIcon={<img src={playstore} height={24} />}
                                     variant='contained'
                                     disableElevation

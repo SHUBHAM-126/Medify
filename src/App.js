@@ -8,7 +8,6 @@ function App() {
   return (
     <div>
       <CssBaseline />
-      <Navbar />
       <Outlet />
       <DownloadApp />
       <Footer />

@@ -9,17 +9,18 @@ import PatientCaring from "../../components/Sections/PatientCaring/PatientCaring
 import Specialists from "../../components/Sections/Specialists/Specialists";
 import Specialization from "../../components/Sections/Specialization/Specialization";
 import Offers from "../../components/Sections/Offers/Offers";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function Home() {
     return (
         <Box>
-
             <Box sx={{ background: 'linear-gradient(#E7F0FF , rgba(232, 241, 255, 0.47) 90%, #fff 10%)', }} mb={4}>
+                <Navbar />
                 <Container maxWidth='xl'>
                     <HeroSlider />
                     <Stack
-                        p={8}
-                        mt={-10}
+                        p={{ xs: 2.5, md: 8 }}
+                        mt={{ xs: -2, md: -10 }}
                         position='relative'
                         zIndex={99}
                         bgcolor="#fff"
@@ -33,7 +34,7 @@ export default function Home() {
                 </Container>
             </Box>
 
-            <Offers/>
+            <Offers />
 
             <Specialization />
 

@@ -5,7 +5,7 @@ export default function OurFamilies() {
     return (
         <Box pt={3} sx={{ background: 'linear-gradient(#E7F0FF, #E8F1FF)' }}>
             <Container>
-                <Grid container alignItems='center' spacing={10}>
+                <Grid container alignItems='center' spacing={{xs:2,md:10}}>
 
                     <Grid item xs={12} md={6}>
                         <Typography

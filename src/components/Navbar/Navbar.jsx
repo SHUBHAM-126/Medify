@@ -30,9 +30,9 @@ export default function Navbar() {
                         spacing={4}
                         alignItems={{ xs: 'flex-start', md: "center" }}
                         className={[styles.navlinks, menuOpen && styles.active]}
-                        pt={{xs: 12 , md: 1}}
-                        pb={{xs: 4 , md: 1}}
-                        px={{xs: 4 , md: 0}}
+                        pt={{ xs: 12, md: 1 }}
+                        pb={{ xs: 4, md: 1 }}
+                        px={{ xs: 4, md: 0 }}
                     >
                         <Link>Find Doctors</Link>
                         <Link>Hospitals</Link>
@@ -47,10 +47,10 @@ export default function Navbar() {
                             <IconButton
                                 onClick={() => setMenuOpen(false)}
                                 sx={{
-                                    position:'absolute',
-                                    top:0,
-                                    right:32,
-                                    color:'#fff'
+                                    position: 'absolute',
+                                    top: 0,
+                                    right: 32,
+                                    color: '#fff'
                                 }}
                             >
                                 <CloseIcon />
