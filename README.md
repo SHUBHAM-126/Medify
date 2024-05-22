@@ -3,7 +3,7 @@
 
 *Description:* A web application designed to help users find the nearest hospitals by selecting their state and city. The app allows users to book appointments at hospitals and check their appointments after booking. It's targeted towards individuals seeking convenient access to healthcare facilities.
 
-Live URL: https://medify-three.vercel.app/
+*Live URL:* https://medify-three.vercel.app/
 
 ## Role and Responsibilities
 I was the sole developer of this project, responsible for the entire front-end development using React. The design was provided to me, and I managed everything from translating the design into a functional interface to implementing and integrating APIs for fetching cities and managing bookings.
