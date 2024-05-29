@@ -22,7 +22,7 @@ I was the sole developer of this project, responsible for the entire front-end d
 ## Key Features and Functionality
 - Dynamic search functionality where users can select their state and then fetch corresponding cities via an API.
 - Users can then see a list of nearby hospitals and book an appointment directly through the website.
-- After booking, users can log in to check their appointment details.
+- After booking, users can check their appointment details.
 - The interface is designed to be user-friendly and responsive across different devices.
 
 ### Homepage
